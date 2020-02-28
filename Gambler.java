@@ -18,6 +18,7 @@ public class Gambler
 	static int lost=0;
 	int	perdaywin;
 	int perdaylost;
+	int ans=0;
 	static List<Integer> ls=new ArrayList<Integer>();
 	void perdays()
 	{ 
@@ -84,10 +85,18 @@ public class Gambler
 			System.out.println("win per day  :" + win);			// WIN COUNT
 			System.out.println("lost per day :" +lost);		*/	//LOST COUNT
 			totalamount=totalamount+result;
-	}
-	System.out.println("win per month :" + win);				// WIN COUNT PERMONTH
-	System.out.println("lost per month :" +lost);				//LOST COUNT PERMONTH
-	System.out.println( "Total-amount cash  won or lost PerMonth : "+totalamount);	
+			
+			System.out.println("win per month :" + win);				// WIN COUNT PERMONTH
+			System.out.println("lost per month :" +lost);				//LOST COUNT PERMONTH
+			System.out.println( "Total-amount cash  won or lost PerMonth : "+totalamount);
+			
+			int ans=win-lost;
+			if(ans>=0)
+			{
+			System.out.println("If it is postive then it will play next month or stop :" +ans);
+			break;
+			}			
+		}	
 }
 public static void main(String[] args) {
 	
@@ -97,13 +106,16 @@ public static void main(String[] args) {
 	{
 		gm.month();
 	}
-	System.out.println("**********************************************************");
+	System.out.println("************************************************************");
 	gm.perdays();
 	Collections.sort(ls);
 	System.out.println("*************************************************************");
 	System.out.println(" Luckiest day i won Maximum is   :"+Collections.max(ls));
 	System.out.println(" UnLuckiest day i won Minumum is :"+Collections.min(ls));
-	}
+	System.out.println("*************************************************************");
+	//System.out.println("**************************************************************");
+
+	}	
 }
 	
 	
